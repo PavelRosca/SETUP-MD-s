@@ -1,95 +1,145 @@
-GUIDA SETUP - website-wag (ITALIANO)
-======================================
+# 🚀 Guida Setup — website-wag (Italiano)
 
-REQUISITI
----------
-- Python 3.12+ (scarica da https://www.python.org/downloads/)
-- PowerShell o Command Prompt
+Guida rapida per eseguire il progetto Django + Wagtail CMS in locale su Windows.
 
-INSTALLAZIONE (5 MINUTI)
-------------------------
+---
 
-1. ATTIVA L'AMBIENTE VIRTUALE
-   cd C:\percorso\a\website-wag
-   .venv\Scripts\activate
+## 📋 Requisiti
 
-   Dovresti vedere (.venv) all'inizio del prompt.
+- **Python 3.12+** — Scarica da https://www.python.org/downloads/  
+  ⚠️ Durante l'installazione, seleziona **"Add Python to PATH"**
+- **PowerShell** o **Command Prompt** (Windows)
 
-2. INSTALLA DIPENDENZE
-   pip install -r requirements.txt
+---
 
-3. CREA FILE .env
-   - Copia .env.example e rinominalo in .env
-   - Oppure usa:
-     copy .env.example .env
+## ⚡ Installazione (5 minuti)
 
-4. APPLICA MIGRAZIONI DATABASE
-   python manage.py migrate
+### 1️⃣ Naviga al progetto
 
-5. CREA ACCOUNT ADMIN
-   python manage.py createsuperuser
-   
-   Segui le istruzioni e salva le credenziali.
+```powershell
+cd C:\percorso\a\website-wag
+```
 
-6. AVVIA IL SERVER
-   python manage.py runserver
+### 2️⃣ Attiva l'ambiente virtuale
 
-   Dovresti vedere: "Starting development server at http://127.0.0.1:8000/"
+```powershell
+.venv\Scripts\activate
+```
 
+Dovresti vedere `(.venv)` all'inizio del prompt:
+```
+(.venv) PS C:\Users\YourName\website-wag>
+```
 
-ACCEDI ALL'APPLICAZIONE
------------------------
+### 3️⃣ Installa dipendenze
 
-Apri il browser e vai a:
+```powershell
+pip install -r requirements.txt
+```
 
-- SITO PUBBLICO:     http://127.0.0.1:8000/
-- WAGTAIL CMS:       http://127.0.0.1:8000/cms/
-- ADMIN DJANGO:      http://127.0.0.1:8000/admin/
-- API:               http://127.0.0.1:8000/api/
+### 4️⃣ Crea file `.env`
 
-Log in con le credenziali del superuser che hai creato.
+```powershell
+copy .env.example .env
+```
 
+### 5️⃣ Applica migrazioni database
 
-COMANDI UTILI
--------------
+```powershell
+python manage.py migrate
+```
 
-Interrompi il server:           CTRL+BREAK (o CTRL+C)
-Controlla salute del progetto:  python manage.py check
-Accedi al database (shell):     python manage.py shell
-Colleziona file statici:        python manage.py collectstatic --noinput
+### 6️⃣ Crea account admin
 
+```powershell
+python manage.py createsuperuser
+```
 
-PROBLEMI COMUNI
----------------
+Segui le istruzioni e **salva le credenziali!**
 
-❌ "Python non trovato"
-   → Reinstalla Python e seleziona "Add Python to PATH"
+### 7️⃣ Avvia il server
 
-❌ "No module named 'django'"
-   → Verifica che (.venv) sia nel prompt
-   → Esegui: pip install -r requirements.txt
+```powershell
+python manage.py runserver
+```
 
-❌ "Port 8000 già in uso"
-   → Esegui: python manage.py runserver 8001
-   → Vai a http://127.0.0.1:8001/
+Dovresti vedere:
+```
+Starting development server at http://127.0.0.1:8000/
+```
 
-❌ "Permission denied su db.sqlite3"
-   → Chiudi altre app che usano il database
-   → O ricrea la base dati: rm db.sqlite3 && python manage.py migrate
+✅ **Fatto!**
 
+---
 
-RIAVVIO DOPO CHIUSURA
----------------------
+## 🌐 Accedi all'applicazione
 
-1. cd C:\percorso\a\website-wag
-2. .venv\Scripts\activate
-3. python manage.py runserver
-4. Vai a http://127.0.0.1:8000/
+Apri il browser:
 
+| Interfaccia | URL |
+|---|---|
+| 🏠 **Sito Pubblico** | http://127.0.0.1:8000/ |
+| 📝 **Wagtail CMS** | http://127.0.0.1:8000/cms/ |
+| ⚙️ **Admin Django** | http://127.0.0.1:8000/admin/ |
+| 🔌 **API REST** | http://127.0.0.1:8000/api/ |
 
-DOCUMENTI AGGIUNTIVI
---------------------
+**Log in** con le credenziali del superuser creato al passo 6.
 
-- SETUP.md (guida completa in inglese)
-- .env.example (tutte le variabili d'ambiente)
-- NOTES/ (documentazione progetto)
+---
+
+## 🛠️ Comandi utili
+
+| Comando | Descrizione |
+|---|---|
+| `CTRL+BREAK` | Interrompi il server |
+| `python manage.py check` | Verifica integrità del progetto |
+| `python manage.py shell` | Shell Python interattiva |
+| `python manage.py collectstatic --noinput` | Raccogli file statici |
+
+---
+
+## 🐛 Problemi comuni
+
+### ❌ "Python non trovato"
+**Soluzione:** Reinstalla Python e seleziona **"Add Python to PATH"**
+
+### ❌ "No module named 'django'"
+**Soluzione:** Verifica che `(.venv)` sia nel prompt, poi esegui:
+```powershell
+pip install -r requirements.txt
+```
+
+### ❌ "Port 8000 già in uso"
+**Soluzione:**
+```powershell
+python manage.py runserver 8001
+```
+Vai a http://127.0.0.1:8001/
+
+### ❌ "Permission denied su db.sqlite3"
+**Soluzione:**
+```powershell
+rm db.sqlite3
+python manage.py migrate
+python manage.py createsuperuser
+```
+
+---
+
+## 🔄 Riavvia il servizio
+
+Dopo aver chiuso il terminal:
+
+```powershell
+cd C:\percorso\a\website-wag
+.venv\Scripts\activate
+python manage.py runserver
+```
+
+---
+
+## 📚 Documenti aggiuntivi
+
+- **SETUP.md** — Guida completa in inglese
+- **.env.example** — Tutte le variabili d'ambiente
+- **NOTES/** — Documentazione progetto
