@@ -1,26 +1,26 @@
-# 🚀 Guida Setup — website-wag (Italiano)
+# Setup Guide — website-wag (Italiano)
 
 Guida rapida per eseguire il progetto Django + Wagtail CMS in locale su Windows.
 
 ---
 
-## 📋 Requisiti
+## Requisiti
 
 - **Python 3.12+** — Scarica da https://www.python.org/downloads/  
-  ⚠️ Durante l'installazione, seleziona **"Add Python to PATH"**
+  Durante l'installazione, seleziona **"Add Python to PATH"**
 - **PowerShell** o **Command Prompt** (Windows)
 
 ---
 
-## ⚡ Installazione (5 minuti)
+## Installazione (5 minuti)
 
-### 1️⃣ Naviga al progetto
+### 1. Naviga al progetto
 
 ```powershell
 cd C:\percorso\a\website-wag
 ```
 
-### 2️⃣ Attiva l'ambiente virtuale
+### 2. Attiva l'ambiente virtuale
 
 ```powershell
 .venv\Scripts\activate
@@ -31,33 +31,33 @@ Dovresti vedere `(.venv)` all'inizio del prompt:
 (.venv) PS C:\Users\YourName\website-wag>
 ```
 
-### 3️⃣ Installa dipendenze
+### 3. Installa dipendenze
 
 ```powershell
 pip install -r requirements.txt
 ```
 
-### 4️⃣ Crea file `.env`
+### 4. Crea file `.env`
 
 ```powershell
 copy .env.example .env
 ```
 
-### 5️⃣ Applica migrazioni database
+### 5. Applica migrazioni database
 
 ```powershell
 python manage.py migrate
 ```
 
-### 6️⃣ Crea account admin
+### 6. Crea account admin
 
 ```powershell
 python manage.py createsuperuser
 ```
 
-Segui le istruzioni e **salva le credenziali!**
+Segui le istruzioni e salva le credenziali.
 
-### 7️⃣ Avvia il server
+### 7. Avvia il server
 
 ```powershell
 python manage.py runserver
@@ -68,26 +68,24 @@ Dovresti vedere:
 Starting development server at http://127.0.0.1:8000/
 ```
 
-✅ **Fatto!**
-
 ---
 
-## 🌐 Accedi all'applicazione
+## Accedi all'applicazione
 
 Apri il browser:
 
 | Interfaccia | URL |
 |---|---|
-| 🏠 **Sito Pubblico** | http://127.0.0.1:8000/ |
-| 📝 **Wagtail CMS** | http://127.0.0.1:8000/cms/ |
-| ⚙️ **Admin Django** | http://127.0.0.1:8000/admin/ |
-| 🔌 **API REST** | http://127.0.0.1:8000/api/ |
+| Sito Pubblico | http://127.0.0.1:8000/ |
+| Wagtail CMS | http://127.0.0.1:8000/cms/ |
+| Admin Django | http://127.0.0.1:8000/admin/ |
+| API REST | http://127.0.0.1:8000/api/ |
 
-**Log in** con le credenziali del superuser creato al passo 6.
+Accedi con le credenziali del superuser creato al passo 6.
 
 ---
 
-## 🛠️ Comandi utili
+## Comandi utili
 
 | Comando | Descrizione |
 |---|---|
@@ -98,26 +96,26 @@ Apri il browser:
 
 ---
 
-## 🐛 Problemi comuni
+## Problemi comuni
 
-### ❌ "Python non trovato"
-**Soluzione:** Reinstalla Python e seleziona **"Add Python to PATH"**
+### "Python non trovato"
+Reinstalla Python e seleziona **"Add Python to PATH"** durante l'installazione.
 
-### ❌ "No module named 'django'"
-**Soluzione:** Verifica che `(.venv)` sia nel prompt, poi esegui:
+### "No module named 'django'"
+Verifica che `(.venv)` sia attivo nel prompt, poi esegui:
 ```powershell
 pip install -r requirements.txt
 ```
 
-### ❌ "Port 8000 già in uso"
-**Soluzione:**
+### "Port 8000 già in uso"
+Esegui:
 ```powershell
 python manage.py runserver 8001
 ```
-Vai a http://127.0.0.1:8001/
+Accedi a http://127.0.0.1:8001/
 
-### ❌ "Permission denied su db.sqlite3"
-**Soluzione:**
+### "Permission denied su db.sqlite3"
+Ricrea il database:
 ```powershell
 rm db.sqlite3
 python manage.py migrate
@@ -126,7 +124,7 @@ python manage.py createsuperuser
 
 ---
 
-## 🔄 Riavvia il servizio
+## Riavvia il servizio
 
 Dopo aver chiuso il terminal:
 
@@ -138,8 +136,8 @@ python manage.py runserver
 
 ---
 
-## 📚 Documenti aggiuntivi
+## Documenti aggiuntivi
 
-- **SETUP.md** — Guida completa in inglese
-- **.env.example** — Tutte le variabili d'ambiente
-- **NOTES/** — Documentazione progetto
+- **SETUP.md** — Guida completa e dettagliata in inglese
+- **.env.example** — Tutte le variabili d'ambiente disponibili
+- **NOTES/** — Documentazione del progetto
